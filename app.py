@@ -111,7 +111,7 @@ class PDFProcessor:
             Limit to 200 words.
             """
             
-            model = genai.GenerativeModel('models/gemini-2.0-pro-exp-02-05')
+            model = genai.GenerativeModel("models/gemini-1.5-flash")
             response = model.generate_content(prompt)
             return response.text
         except Exception as e:
@@ -127,7 +127,8 @@ class PDFProcessor:
             {truncated_text}
             """
             
-            model = genai.GenerativeModel('models/gemini-2.0-pro-exp-02-05')
+            model = genai.GenerativeModel("models/gemini-1.5-flash")
+
             safety_settings = [
                 {
                     "category": "HARM_CATEGORY_HARASSMENT",
@@ -204,7 +205,7 @@ class PDFProcessor:
         If you cannot find the answer from the context or past conversations, respond with exactly "ANSWER_NOT_FOUND".
         """
 
-        model = genai.GenerativeModel('models/gemini-2.0-pro-exp-02-05')
+        model = genai.GenerativeModel("models/gemini-1.5-flash")
         initial_response = model.generate_content(prompt)
         
         if initial_response.text.strip() == "ANSWER_NOT_FOUND":
@@ -224,7 +225,7 @@ def get_general_knowledge_response(question):
         Please provide a precised answer based on your knowledge and web search with best readability presentation such that a beginner can understand easily.
         """
         
-        model = genai.GenerativeModel('models/gemini-2.0-pro-exp-02-05')
+        model = genai.GenerativeModel("models/gemini-1.5-flash")
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:
