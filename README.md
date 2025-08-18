@@ -68,6 +68,11 @@ Chat with your PDFs like they’re alive — upload lecture notes, textbooks, re
 ```
 
 ---
+## Mechanism :
+1. Upload PDF → Extract text → Chunk it → Vectorize → Store in FAISS
+2. Ask question → Vectorize → Search in FAISS → Get context → Gemini generates answer
+3. If not found → fallback to general AI knowledge
+4. Chat + Export feature
 
 ## ⚙️ Installation & Setup
 
