@@ -4,7 +4,7 @@
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
 import streamlit as st
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings.spacy_embeddings import SpacyEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -412,3 +412,4 @@ def main():
 # ===================================================================
 if __name__ == "__main__":
     main()
+
